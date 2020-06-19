@@ -20,6 +20,8 @@ repositories {
 
 ext {
 	springFoxVersion = "2.9.2"
+	mongockVersion = "3.3.2"
+	testcontainers = "1.14.1"
 }
 
 dependencies {
@@ -29,13 +31,14 @@ dependencies {
 	implementation "io.springfox:springfox-swagger2:${springFoxVersion}"
 	implementation "io.springfox:springfox-swagger-ui:${springFoxVersion}"
 
-	implementation 'com.github.cloudyrock.mongock:mongock-spring:3.3.2'
+	implementation "com.github.cloudyrock.mongock:mongock-spring:${mongockVersion}"
 
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
 	compileOnly 'org.projectlombok:lombok'
 
 	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation "org.testcontainers:testcontainers:${testcontainers}"
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
