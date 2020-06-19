@@ -3,7 +3,7 @@ java:
   - 1.8
 
 before_install:
-  - chmod +x mvnw
+  - chmod +x gradlew
 
 install:
   - /gradlew clean build
