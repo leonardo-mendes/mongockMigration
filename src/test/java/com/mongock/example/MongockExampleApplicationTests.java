@@ -37,7 +37,6 @@ class MongockExampleApplicationTests {
 	@Test
 	public void should_retrieve_handler_history() throws Exception {
 		Product product = productRepository.findByName("Nike SB");
-		ObjectMapper mapper = new ObjectMapper();
 		String result = mockMvc
 				.perform(get("/product"))
 				.andExpect(status().isOk())

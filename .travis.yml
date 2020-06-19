@@ -1,0 +1,16 @@
+language: java
+java:
+  - 1.8
+
+before_install:
+  - chmod +x mvnw
+
+install:
+  - /gradlew clean build
+
+notifications:
+email:
+recipients:
+  - leonardocm92@hotmail.com
+on_success: always
+on_failure: always
