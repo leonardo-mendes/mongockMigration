@@ -5,8 +5,18 @@ java:
 before_install:
   - chmod +x gradlew
 
-install:
-  - /gradlew clean build
+install: skip
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+script:
+  - ./gradlew clean build
 
 notifications:
 email:
